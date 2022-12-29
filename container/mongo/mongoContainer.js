@@ -2,7 +2,9 @@ const mongoose = require('mongoose')
 const modelsProducts = require('../../models/modelsProducts')
 const modelsCart = require('../../models/modelsCart')
 
-mongoose.connect("mongodb+srv://coderhouse:coderhouse@backendcoder.zhvn6xh.mongodb.net/?retryWrites=true&w=majority",{
+const { mongoDbPassword } = require('../../db/mongoPass')
+
+mongoose.connect(`mongodb+srv://coderhouse:${mongoDbPassword}@backendcoder.zhvn6xh.mongodb.net/?retryWrites=true&w=majority`,{
     useNewUrlParser : true, 
     useUnifiedTopology : true
 }, (err) => {
