@@ -1,6 +1,13 @@
 const express = require('express')
 const path = require('path')
 
+const app = express()
+
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
+
+const PORT = process.env.port || 8080
+
 //MongoDb
 const productsMongoRouter = require('./routers/mongo/routerProductsMongo')
 const cartMongoRouter = require('./routers/mongo/routerCartMongo')
@@ -23,15 +30,6 @@ const cartRouter = require('./routers/sqlRouters/RouterCart')
 app.use('/api/productos', productsRouter)
 app.use('/api/carrito', cartRouter)
 
-
-const app = express()
-
-const PORT = process.env.port || 8080
-
-
-
-app.use(express.json())
-app.use(express.urlencoded({extended: true}))
 
 
 app.use((req,res) => {

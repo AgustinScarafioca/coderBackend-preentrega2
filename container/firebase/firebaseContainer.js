@@ -1,6 +1,3 @@
-const admin = require ('firebase-admin')
-
-const serviceAccount = require('../../db/backend-1-83d55-firebase-adminsdk-1mzv6-a031ef24b5.json')
 
 var admin = require("firebase-admin");
 
